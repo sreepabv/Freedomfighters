@@ -1,0 +1,72 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: url("indian.jpeg");
+    background-size: cover; /* Ensure the image covers the background */
+    background-position: center; /* Center the image */
+}
+
+.card-list .card-item{
+    color: white;
+    width: 500px;
+    padding: 35px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    backdrop-filter: blur(30px);
+    background: gray;
+    border: 1px solid;
+}
+
+.card-list .card-item .user-image {
+    width: 500%;
+    height: auto;
+    max-width: 450px;
+    border-radius: 0;
+    margin-bottom: 50px;
+    border: 3px solid white;
+    padding: 0px;
+}
+
+.card-list .card-item .user-profession{
+    opacity: 0; /* Text starts off hidden */
+    transform: translateY(20px); /* Starts from below the visible area */
+    animation: fadeInUp 1s forwards; /* Animation to fade in and slide up */
+    font-size: 1.15rem;
+    color: white;
+    font-weight: 500;
+    margin: 14px 0 40px;
+
+
+}
+
+.slider-wrapper .swiper-pagination-bullet{
+    background: white;
+    height: 15px;
+    width: 5px;
+
+}
+
+.slider-wrapper .swiper-slide-button{
+    color: white;
+    margin-top: -50px;
+    transition: 0.2s ease;
+
+
+}
+
+.slider-wrapper .swiper-slide-button{
+    color: blue;
+
+
+}

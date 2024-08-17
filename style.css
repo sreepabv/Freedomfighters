@@ -1,0 +1,135 @@
+/* Base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif; /* Added fallback font */
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: url("indian.jpeg") no-repeat center center;
+    background-size: cover;
+}
+
+/* Container for card items */
+.card-list {
+    display: flex;
+    flex-wrap: wrap; /* Allow cards to wrap on smaller screens */
+    gap: 20px; /* Space between cards */
+    justify-content: center; /* Center align cards */
+}
+
+.card-list .card-item {
+    color: white;
+    width: 100%; /* Default to full width on small screens */
+    max-width: 500px; /* Ensure cards don’t exceed a certain width */
+    padding: 35px;
+    display: flex; /* Use flexbox for alignment */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    backdrop-filter: blur(30px);
+    background: gray;
+    border: 1px solid;
+}
+
+/* Ensure images are responsive */
+.card-list .card-item .user-image {
+    width: 100%; /* Scale image to fit container */
+    height: auto;
+    max-width: 100%; /* Ensure image doesn’t exceed container width */
+    border-radius: 0;
+    margin-bottom: 20px; /* Reduce bottom margin */
+    border: 3px solid white;
+    padding: 0;
+}
+
+/* Style for user profession text */
+.card-list .card-item .user-profession {
+    opacity: 0; /* Text starts off hidden */
+    transform: translateY(20px); /* Starts from below the visible area */
+    animation: fadeInUp 1s forwards; /* Animation to fade in and slide up */
+    font-size: 1.15rem;
+    color: white;
+    font-weight: 500;
+    margin: 14px 0 20px; /* Adjust margin for smaller screens */
+}
+
+/* Swiper pagination styling */
+.slider-wrapper .swiper-pagination-bullet {
+    background: white;
+    height: 15px;
+    width: 5px;
+}
+
+/* Swiper slide button styling */
+.slider-wrapper .swiper-slide-button {
+    color: white;
+    margin-top: -50px;
+    transition: 0.2s ease;
+}
+
+/* Swiper slide button hover state */
+.slider-wrapper .swiper-slide-button:hover {
+    color: blue;
+}
+
+/* Responsive design adjustments */
+@media (max-width: 768px) {
+    .card-list .card-item {
+        width: 90%; /* Make cards smaller on tablets and mobile */
+        padding: 20px; /* Adjust padding */
+    }
+
+    .card-list .card-item .user-image {
+        max-width: 100%; /* Ensure image scales appropriately */
+    }
+
+    .card-list .card-item .user-profession {
+        font-size: 1rem; /* Reduce font size for readability */
+        margin: 10px 0; /* Adjust margin */
+    }
+
+    .slider-wrapper .swiper-pagination-bullet {
+        height: 10px; /* Smaller pagination bullets */
+        width: 4px;
+    }
+}
+
+@media (max-width: 480px) {
+    .card-list .card-item {
+        width: 100%; /* Full width on very small screens */
+        padding: 15px; /* Further reduce padding */
+    }
+
+    .card-list .card-item .user-image {
+        max-width: 100%; /* Ensure image fits the container */
+        margin-bottom: 15px; /* Reduce bottom margin */
+    }
+
+    .card-list .card-item .user-profession {
+        font-size: 0.9rem; /* Smaller text for small screens */
+    }
+
+    .slider-wrapper .swiper-pagination-bullet {
+        height: 8px; /* Even smaller pagination bullets */
+        width: 3px;
+    }
+}
+
+/* Animation for user profession */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
